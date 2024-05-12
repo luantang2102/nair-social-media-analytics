@@ -30,6 +30,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import static com.luantang.socialmediaanalytics.dashboard.constant.FacebookConstant.FACEBOOK_AUTH_EXPIRATION;
+
 @Service
 public class FacebookServiceImpl implements FacebookService {
     private final FacebookAuthRepository facebookAuthRepository;
@@ -71,7 +73,7 @@ public class FacebookServiceImpl implements FacebookService {
         facebookAuthDetails.setUserAccessToken(userAccessToken);
         facebookAuthDetails.setPages(pages);
         facebookAuthDetails.setAppUserEmail(email);
-        facebookAuthDetails.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 60 * 24 * 30));
+        facebookAuthDetails.setExpiration(new Date(System.currentTimeMillis() + FACEBOOK_AUTH_EXPIRATION));
 
         facebookAuthRepository.save(facebookAuthDetails);
 

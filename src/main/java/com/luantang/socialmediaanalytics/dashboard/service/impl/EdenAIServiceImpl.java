@@ -36,10 +36,9 @@ public class EdenAIServiceImpl implements EdenAIService {
 
             TextGenerationRequest captionRequest = new TextGenerationRequest();
             captionRequest.setProviders("amazon");
-            captionRequest.setText("Write a facebook page post caption about: \"" + text + "\" with tone " + tone);
-            captionRequest.setTemperature(0);
-            captionRequest.setMax_tokens(150);
-            captionRequest.setFallback_providers("");
+            captionRequest.setText("Write a facebook page post caption about: \"" + text + "\" with tone " + tone + " and having hashtag");
+            captionRequest.setTemperature(0.2);
+            captionRequest.setMax_tokens(250);
 
             HttpEntity<TextGenerationRequest> request =
                     new HttpEntity<>(captionRequest, headers);

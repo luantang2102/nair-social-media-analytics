@@ -6,4 +6,5 @@ public class FacebookConstant {
     public static final String FACEBOOK_OAUTH_DIALOG_URL = "https://www.facebook.com/v19.0/dialog/oauth";
     public static final String FACEBOOK_APP_ID = "";
     public static final String FACEBOOK_APP_SECRET = "";
+    public static final long FACEBOOK_AUTH_EXPIRATION = 1000 * 60 * 60 * 60 * 24 * 30;
 }

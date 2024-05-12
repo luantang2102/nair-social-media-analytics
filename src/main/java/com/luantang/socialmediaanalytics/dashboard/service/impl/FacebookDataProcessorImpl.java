@@ -1,5 +1,7 @@
 package com.luantang.socialmediaanalytics.dashboard.service.impl;
 
+import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.feed.Datum;
+import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.feed.Root;
 import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.insight.page_fans.PageFanDatum;
 import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.insight.page_fans.PageFanResponse;
 import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.insight.page_fans.PageFanValue;
@@ -19,6 +21,8 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -27,11 +31,11 @@ public class FacebookDataProcessorImpl implements FacebookDataProcessor {
     //Match posts performance
     @Override
     public List<PostPerformance> matchPostPerformanceData
-    (com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.feed.Root rawResponseData) {
+    (Root rawResponseData) {
         //TODO handle the cursors to next page
         try {
             List<PostPerformance> allPostPerformanceData = new ArrayList<>();
-            for(com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.feed.Datum datum : rawResponseData.getData()) {
+            for(Datum datum : rawResponseData.getData()) {
                 PostPerformance postPerformanceData = new PostPerformance();
                 postPerformanceData.setId(datum.getId());
                 postPerformanceData.setCaption(datum.getMessage());
@@ -49,12 +53,28 @@ public class FacebookDataProcessorImpl implements FacebookDataProcessor {
                 postPerformanceData.setTotalComment(datum.getComments().getSummary().getTotal_count());
                 allPostPerformanceData.add(postPerformanceData);
             }
+            //Sorting based on the sum of reactions and comments
+            sortPostPerformance(allPostPerformanceData);
             return allPostPerformanceData;
         }
         catch (Exception ex) {
             ex.printStackTrace();
             //TODO handle match failed
             throw new RuntimeException();
+        }
+    }
+
+    private void sortPostPerformance(List<PostPerformance> postPerformanceList) {
+        for (int i = 0; i < postPerformanceList.size(); i++) {
+            for (int j = i + 1; j < postPerformanceList.size(); j++) {
+                int sum1 = postPerformanceList.get(i).getTotalReaction() + postPerformanceList.get(i).getTotalComment();
+                int sum2 = postPerformanceList.get(j).getTotalReaction() + postPerformanceList.get(j).getTotalComment();
+                if (sum1 < sum2) {
+                    PostPerformance temp = postPerformanceList.get(i);
+                    postPerformanceList.set(i, postPerformanceList.get(j));
+                    postPerformanceList.set(j, temp);
+                }
+            }
         }
     }
 
