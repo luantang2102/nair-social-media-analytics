@@ -1,10 +1,10 @@
 package com.luantang.socialmediaanalytics.dashboard.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.model.UserEntity;
-import com.luantang.socialmediaanalytics.authentication.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
 import com.luantang.socialmediaanalytics.dashboard.constant.EdenAIConstant;
 import com.luantang.socialmediaanalytics.dashboard.dto.edenai.TextGenerationDto;
-import com.luantang.socialmediaanalytics.dashboard.dto.edenai.request.TextGenerationRequest;
+import com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.insight.page_fans.request.TextGenerationRequest;
 import com.luantang.socialmediaanalytics.dashboard.dto.edenai.response.TextGenerationResponse;
 import com.luantang.socialmediaanalytics.dashboard.service.EdenAIService;
 import org.springframework.http.HttpEntity;

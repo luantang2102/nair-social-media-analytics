@@ -1,7 +1,7 @@
 package com.luantang.socialmediaanalytics.authentication.config;
 
 import com.luantang.socialmediaanalytics.authentication.filter.JwtAuthenticationFilter;
-import com.luantang.socialmediaanalytics.authentication.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

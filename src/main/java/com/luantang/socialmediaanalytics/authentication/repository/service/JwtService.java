@@ -1,4 +1,4 @@
-package com.luantang.socialmediaanalytics.authentication.service;
+package com.luantang.socialmediaanalytics.authentication.repository.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 

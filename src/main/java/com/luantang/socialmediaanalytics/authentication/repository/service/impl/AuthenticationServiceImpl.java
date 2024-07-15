@@ -1,4 +1,4 @@
-package com.luantang.socialmediaanalytics.authentication.service.impl;
+package com.luantang.socialmediaanalytics.authentication.repository.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.dto.AuthMessageDto;
 import com.luantang.socialmediaanalytics.authentication.dto.AuthResponseDto;
@@ -9,10 +9,10 @@ import com.luantang.socialmediaanalytics.authentication.exception.TokenExpiredEx
 import com.luantang.socialmediaanalytics.authentication.model.EmailConfirmationToken;
 import com.luantang.socialmediaanalytics.authentication.model.Role;
 import com.luantang.socialmediaanalytics.authentication.model.UserEntity;
-import com.luantang.socialmediaanalytics.authentication.service.AuthenticationService;
-import com.luantang.socialmediaanalytics.authentication.service.EmailService;
-import com.luantang.socialmediaanalytics.authentication.service.JwtService;
-import com.luantang.socialmediaanalytics.authentication.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.AuthenticationService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.EmailService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.JwtService;
+import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

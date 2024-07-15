@@ -1,4 +1,4 @@
-package com.luantang.socialmediaanalytics.dashboard.dto.edenai.request;
+package com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.page.insight.page_fans.request;
 
 import lombok.*;
 
