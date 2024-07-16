@@ -1,4 +1,4 @@
-package com.luantang.socialmediaanalytics.authentication.repository.service;
+package com.luantang.socialmediaanalytics.authentication.service;
 
 import com.luantang.socialmediaanalytics.authentication.dto.AuthMessageDto;
 import com.luantang.socialmediaanalytics.authentication.dto.AuthResponseDto;

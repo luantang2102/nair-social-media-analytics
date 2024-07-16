@@ -1,10 +1,10 @@
-package com.luantang.socialmediaanalytics.authentication.repository.service.impl;
+package com.luantang.socialmediaanalytics.authentication.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.exception.EmailConfirmationTokenNotFoundException;
 import com.luantang.socialmediaanalytics.authentication.exception.FailedToSendEmailException;
 import com.luantang.socialmediaanalytics.authentication.model.EmailConfirmationToken;
 import com.luantang.socialmediaanalytics.authentication.repository.EmailConfirmationTokenRepository;
-import com.luantang.socialmediaanalytics.authentication.repository.service.EmailService;
+import com.luantang.socialmediaanalytics.authentication.service.EmailService;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

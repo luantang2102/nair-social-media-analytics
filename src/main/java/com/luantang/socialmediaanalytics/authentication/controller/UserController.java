@@ -2,7 +2,7 @@ package com.luantang.socialmediaanalytics.authentication.controller;
 
 import com.luantang.socialmediaanalytics.authentication.dto.UserDto;
 import com.luantang.socialmediaanalytics.authentication.model.UserEntity;
-import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

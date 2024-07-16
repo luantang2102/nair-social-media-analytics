@@ -1,11 +1,11 @@
-package com.luantang.socialmediaanalytics.authentication.repository.service.impl;
+package com.luantang.socialmediaanalytics.authentication.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.dto.UserDto;
 import com.luantang.socialmediaanalytics.authentication.exception.EmailAlreadyExistException;
 import com.luantang.socialmediaanalytics.authentication.exception.UserNotFoundException;
 import com.luantang.socialmediaanalytics.authentication.model.UserEntity;
 import com.luantang.socialmediaanalytics.authentication.repository.UserRepository;
-import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

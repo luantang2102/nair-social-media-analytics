@@ -1,4 +1,4 @@
-package com.luantang.socialmediaanalytics.authentication.repository.service.impl;
+package com.luantang.socialmediaanalytics.authentication.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.dto.AuthMessageDto;
 import com.luantang.socialmediaanalytics.authentication.dto.AuthResponseDto;
@@ -9,10 +9,10 @@ import com.luantang.socialmediaanalytics.authentication.exception.TokenExpiredEx
 import com.luantang.socialmediaanalytics.authentication.model.EmailConfirmationToken;
 import com.luantang.socialmediaanalytics.authentication.model.Role;
 import com.luantang.socialmediaanalytics.authentication.model.UserEntity;
-import com.luantang.socialmediaanalytics.authentication.repository.service.AuthenticationService;
-import com.luantang.socialmediaanalytics.authentication.repository.service.EmailService;
-import com.luantang.socialmediaanalytics.authentication.repository.service.JwtService;
-import com.luantang.socialmediaanalytics.authentication.repository.service.UserService;
+import com.luantang.socialmediaanalytics.authentication.service.AuthenticationService;
+import com.luantang.socialmediaanalytics.authentication.service.EmailService;
+import com.luantang.socialmediaanalytics.authentication.service.JwtService;
+import com.luantang.socialmediaanalytics.authentication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -59,7 +59,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             emailService.saveConfirmationToken(confirmationToken);
 
             //Send email
-            String link = "http://localhost:8080/api/v1/auth/register/confirm?token=" + confirmationToken.getToken();
+            String link = "https://nair-social-media-analytics-production.up.railway.app/api/v1/auth/register/confirm?token=" + confirmationToken.getToken();
 
             emailService.sendEmail(userRequest.getEmail(), link);
 

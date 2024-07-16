@@ -1,6 +1,6 @@
 package com.luantang.socialmediaanalytics.authentication.filter;
 
-import com.luantang.socialmediaanalytics.authentication.repository.service.JwtService;
+import com.luantang.socialmediaanalytics.authentication.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

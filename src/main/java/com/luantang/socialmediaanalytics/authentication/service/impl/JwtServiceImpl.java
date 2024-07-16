@@ -1,7 +1,7 @@
-package com.luantang.socialmediaanalytics.authentication.repository.service.impl;
+package com.luantang.socialmediaanalytics.authentication.service.impl;
 
 import com.luantang.socialmediaanalytics.authentication.constant.SecurityConstant;
-import com.luantang.socialmediaanalytics.authentication.repository.service.JwtService;
+import com.luantang.socialmediaanalytics.authentication.service.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

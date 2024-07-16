@@ -4,7 +4,7 @@ import com.luantang.socialmediaanalytics.authentication.dto.AuthMessageDto;
 import com.luantang.socialmediaanalytics.authentication.dto.AuthResponseDto;
 import com.luantang.socialmediaanalytics.authentication.dto.LoginDto;
 import com.luantang.socialmediaanalytics.authentication.dto.RegisterDto;
-import com.luantang.socialmediaanalytics.authentication.repository.service.AuthenticationService;
+import com.luantang.socialmediaanalytics.authentication.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
