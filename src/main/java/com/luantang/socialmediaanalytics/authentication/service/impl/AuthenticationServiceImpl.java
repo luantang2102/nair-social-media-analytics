@@ -46,7 +46,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public AuthMessageDto register(RegisterDto registerDto) {
         UserEntity userRequest = registerDtoToNewUser(registerDto);
-        if(emailService.isValidEmail(userRequest.getEmail())) {
+            if(emailService.isValidEmail(userRequest.getEmail())) {
             UserEntity savedUser = userService.createUser(userRequest);
 
             //Create and save email confirmation token
@@ -59,7 +59,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             emailService.saveConfirmationToken(confirmationToken);
 
             //Send email
-            String link = "https://nair-social-media-analytics-production.up.railway.app/api/v1/auth/register/confirm?token=" + confirmationToken.getToken();
+            String link = "http://localhost:8080/api/v1/auth/register/confirm?token=" + confirmationToken.getToken();
 
             emailService.sendEmail(userRequest.getEmail(), link);
 

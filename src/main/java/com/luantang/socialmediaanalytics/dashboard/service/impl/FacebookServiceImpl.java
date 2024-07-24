@@ -57,7 +57,7 @@ public class FacebookServiceImpl implements FacebookService {
                             "pages_manage_engagement," +
                             "pages_manage_posts," +
                             "publish_video" +
-                "&redirect_uri=" + "https://nair-social-media-analytics-production.up.railway.app/api/v1/user/facebook/access" +
+                "&redirect_uri=" + "http://localhost:8080/api/v1/user/facebook/access" +
                 "?email=" + emailEncoder(email);
         return new AuthUrlDto(url);
     }
@@ -86,7 +86,7 @@ public class FacebookServiceImpl implements FacebookService {
                     "?client_id=" + FacebookConstant.FACEBOOK_APP_ID +
                     "&client_secret=" + FacebookConstant.FACEBOOK_APP_SECRET +
                     "&code=" + authorizationCode +
-                    "&redirect_uri=" + "https://nair-social-media-analytics-production.up.railway.app/api/v1/user/facebook/access" + "?email=" + emailEncoder(email);
+                    "&redirect_uri=" + "http://localhost:8080/api/v1/user/facebook/access" + "?email=" + emailEncoder(email);
             ResponseEntity<com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.user.token.Root> responseEntity =  restTemplate.getForEntity(url, com.luantang.socialmediaanalytics.dashboard.dto.facebook.response.user.token.Root.class);
 
             return Objects.requireNonNull(responseEntity.getBody()).getAccess_token();
